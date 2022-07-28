@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main() {
+    int withdraw,deposit,balance = 0,amount,inp,pin;
+    int access;
+    printf("choose any option \n");
+    printf("1)deposit and withdraw\n2)check balance\n");
+    scanf("%d",&inp);
+    switch (inp)
+    {
+        case 1:
+        printf("set your pin\n");
+        scanf("%d",&access);
+        printf("enter your pin\n");
+        scanf("%d",&pin);
+        if(pin==access)
+        {
+        printf("enter the amount to deposit\n");
+        scanf("%d",&amount);
+        balance=balance+amount;
+        printf("enter the amount to withdraw\n");
+        scanf("%d",&amount);
+        if(amount>balance){
+            printf("not enough funds to withdraw\n");
+        }
+        else{
+        balance = balance-amount;
+        printf("remaining balance =%d\n",balance);}
+        break;
+        
+        case 2:
+        printf("enter the amount to deposit\n");
+        scanf("%d",&amount);
+        balance=balance+amount;
+        printf("your total balance = %d\n",balance);
+        break;
+        }
+        else {
+            printf("incorrect pin\n");
+        }
+    }
+    return 0;
+}
